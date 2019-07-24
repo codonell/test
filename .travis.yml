@@ -1,0 +1,9 @@
+language: c
+
+services:
+  - docker
+
+before_install:
+- docker pull centos:6
+- docker run centos:6 /bin/sh -c "cat /proc/self/maps"
+
