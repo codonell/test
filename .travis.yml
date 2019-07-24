@@ -5,6 +5,6 @@ services:
 
 before_install:
 - docker pull centos:6
-- docker run centos:6 /bin/sh -c "gcc -o vsyscall-test vsyscall-test.c; ./vsyscall-test"
 - docker run centos:6 /bin/sh -c "cat /proc/self/maps"
-
+- docker build -t vsyscall-test:v1 .
+- docker run vsyscall-test:v1 /bin/sh -c "/vsyscall-test"
